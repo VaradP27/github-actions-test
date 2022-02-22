@@ -10,7 +10,7 @@ jobs:
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     docker:
       - image: docker/hello-world
-      auth:
+        auth:
           username: varadp27
           password: eab87240-eebf-46ae-ab6a-b87779ecb9af
     # Add steps to the job
