@@ -19,7 +19,7 @@ jobs:
             npm install --save
           ]
 
-      -run:
+      - run:
           name:  Run Tests
           command: [
               npm test
