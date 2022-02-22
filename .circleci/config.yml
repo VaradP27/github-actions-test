@@ -4,13 +4,19 @@ version: 2.1
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
-jobs:
-  - node/test:
-      version: 13.11.0
+workflows:
+  matrix-tests:
+    jobs:
+      - node/test:
+          version: 13.11.0
+      - node/test:
+          version: 12.16.0
+      - node/test:
+          version: 10.19.0
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
   say-hello-workflow:
     jobs:
-      - say-hello
+      - matrix-tests
